@@ -1,0 +1,962 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    height: 100dvh;
+    height: -webkit-fill-available;
+    width: 100%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* =========================================================
+     1. WHITE THEME (Clean High-Contrast Light Mode)
+     ========================================================= */
+  [data-theme="white"],
+  [data-theme="hospital-light"] {
+    color-scheme: light;
+  }
+
+  [data-theme="white"] .bg-slate-950,
+  [data-theme="white"] .bg-slate-900,
+  [data-theme="hospital-light"] .bg-slate-950,
+  [data-theme="hospital-light"] .bg-slate-900 {
+    background-color: #ffffff !important;
+  }
+
+  [data-theme="white"] .bg-slate-900\/90,
+  [data-theme="white"] .bg-slate-900\/80,
+  [data-theme="white"] .bg-slate-800,
+  [data-theme="white"] .bg-slate-800\/80,
+  [data-theme="white"] .bg-slate-800\/50,
+  [data-theme="white"] .bg-slate-800\/40,
+  [data-theme="hospital-light"] .bg-slate-900\/90,
+  [data-theme="hospital-light"] .bg-slate-800 {
+    background-color: #f8fafc !important;
+  }
+
+  [data-theme="white"] .border-slate-800,
+  [data-theme="white"] .border-slate-800\/80,
+  [data-theme="white"] .border-slate-800\/50,
+  [data-theme="white"] .border-slate-700,
+  [data-theme="white"] .border-slate-700\/60,
+  [data-theme="hospital-light"] .border-slate-800 {
+    border-color: #e2e8f0 !important;
+  }
+
+  [data-theme="white"] .text-slate-100,
+  [data-theme="white"] .text-slate-200,
+  [data-theme="white"] .text-slate-300,
+  [data-theme="white"] .text-slate-400,
+  [data-theme="hospital-light"] .text-slate-100,
+  [data-theme="hospital-light"] .text-slate-200 {
+    color: #000000 !important;
+  }
+
+  [data-theme="white"] input,
+  [data-theme="white"] textarea,
+  [data-theme="white"] select,
+  [data-theme="hospital-light"] input,
+  [data-theme="hospital-light"] textarea {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Preserve white text on dark/colored buttons & badges in White Theme */
+  [data-theme="white"] .bg-indigo-600,
+  [data-theme="white"] .bg-sky-500,
+  [data-theme="white"] .bg-emerald-500,
+  [data-theme="white"] .bg-teal-600,
+  [data-theme="white"] .bg-amber-500,
+  [data-theme="white"] .bg-red-500,
+  [data-theme="white"] .bg-gradient-to-r,
+  [data-theme="white"] .bg-gradient-to-br,
+  [data-theme="white"] .text-white-override {
+    color: #ffffff !important;
+  }
+
+  /* =========================================================
+     2. LIGHT BLUE THEME (Ice Cyan Canvas & Deep Blue Text)
+     ========================================================= */
+  [data-theme="light-blue"] {
+    color-scheme: light;
+  }
+
+  [data-theme="light-blue"] .bg-slate-950,
+  [data-theme="light-blue"] .bg-slate-900 {
+    background-color: #e0f2fe !important;
+  }
+
+  [data-theme="light-blue"] .bg-slate-900\/90,
+  [data-theme="light-blue"] .bg-slate-900\/80,
+  [data-theme="light-blue"] .bg-slate-800,
+  [data-theme="light-blue"] .bg-slate-800\/80,
+  [data-theme="light-blue"] .bg-slate-800\/50,
+  [data-theme="light-blue"] .bg-slate-800\/40 {
+    background-color: #f0f9ff !important;
+  }
+
+  [data-theme="light-blue"] .border-slate-800,
+  [data-theme="light-blue"] .border-slate-800\/80,
+  [data-theme="light-blue"] .border-slate-700,
+  [data-theme="light-blue"] .border-slate-700\/60 {
+    border-color: #bae6fd !important;
+  }
+
+  [data-theme="light-blue"] .text-slate-100,
+  [data-theme="light-blue"] .text-slate-200,
+  [data-theme="light-blue"] .text-slate-300,
+  [data-theme="light-blue"] .text-slate-400 {
+    color: #000000 !important;
+  }
+
+  [data-theme="light-blue"] input,
+  [data-theme="light-blue"] textarea,
+  [data-theme="light-blue"] select {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #7dd3fc !important;
+  }
+
+  /* =========================================================
+     3. DARK BLUE THEME (Deep Navy & Pure White Text)
+     ========================================================= */
+  [data-theme="dark-blue"] {
+    color-scheme: dark;
+  }
+
+  [data-theme="dark-blue"] .bg-slate-950 {
+    background-color: #0b192c !important;
+  }
+
+  [data-theme="dark-blue"] .bg-slate-900,
+  [data-theme="dark-blue"] .bg-slate-900\/90,
+  [data-theme="dark-blue"] .bg-slate-900\/80 {
+    background-color: #1e293b !important;
+  }
+
+  [data-theme="dark-blue"] .bg-slate-800,
+  [data-theme="dark-blue"] .bg-slate-800\/80,
+  [data-theme="dark-blue"] .bg-slate-800\/50 {
+    background-color: #334155 !important;
+  }
+
+  [data-theme="dark-blue"] .border-slate-800,
+  [data-theme="dark-blue"] .border-slate-700 {
+    border-color: #334155 !important;
+  }
+
+  [data-theme="dark-blue"] .text-slate-100,
+  [data-theme="dark-blue"] .text-slate-200 {
+    color: #ffffff !important;
+  }
+
+  [data-theme="dark-blue"] input,
+  [data-theme="dark-blue"] textarea,
+  [data-theme="dark-blue"] select {
+    color: #ffffff !important;
+    background-color: #0b192c !important;
+    border-color: #38bdf8 !important;
+  }
+
+  /* =========================================================
+     4. PINK THEME (Soft Rose & Black Text)
+     ========================================================= */
+  [data-theme="pink"] {
+    color-scheme: light;
+  }
+
+  [data-theme="pink"] .bg-slate-950,
+  [data-theme="pink"] .bg-slate-900 {
+    background-color: #fce7f3 !important;
+  }
+
+  [data-theme="pink"] .bg-slate-900\/90,
+  [data-theme="pink"] .bg-slate-900\/80,
+  [data-theme="pink"] .bg-slate-800,
+  [data-theme="pink"] .bg-slate-800\/80,
+  [data-theme="pink"] .bg-slate-800\/50,
+  [data-theme="pink"] .bg-slate-800\/40 {
+    background-color: #fdf2f8 !important;
+  }
+
+  [data-theme="pink"] .border-slate-800,
+  [data-theme="pink"] .border-slate-800\/80,
+  [data-theme="pink"] .border-slate-700,
+  [data-theme="pink"] .border-slate-700\/60 {
+    border-color: #fbcfe8 !important;
+  }
+
+  [data-theme="pink"] .text-slate-100,
+  [data-theme="pink"] .text-slate-200,
+  [data-theme="pink"] .text-slate-300,
+  [data-theme="pink"] .text-slate-400 {
+    color: #000000 !important;
+  }
+
+  [data-theme="pink"] input,
+  [data-theme="pink"] textarea,
+  [data-theme="pink"] select {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #f472b6 !important;
+  }
+
+  /* =========================================================
+     5. BLACK THEME (Obsidian Canvas & Pure White Text)
+     ========================================================= */
+  [data-theme="black"] {
+    color-scheme: dark;
+  }
+
+  [data-theme="black"] .bg-slate-950,
+  [data-theme="black"] .bg-slate-900,
+  [data-theme="black"] .bg-slate-900\/90,
+  [data-theme="black"] .bg-slate-900\/80 {
+    background-color: #000000 !important;
+  }
+
+  [data-theme="black"] .bg-slate-800,
+  [data-theme="black"] .bg-slate-800\/80,
+  [data-theme="black"] .bg-slate-800\/50 {
+    background-color: #121212 !important;
+  }
+
+  [data-theme="black"] .border-slate-800,
+  [data-theme="black"] .border-slate-700 {
+    border-color: #27272a !important;
+  }
+
+  [data-theme="black"] .text-slate-100,
+  [data-theme="black"] .text-slate-200,
+  [data-theme="black"] .text-slate-300 {
+    color: #ffffff !important;
+  }
+
+  [data-theme="black"] input,
+  [data-theme="black"] textarea,
+  [data-theme="black"] select {
+    color: #ffffff !important;
+    background-color: #000000 !important;
+    border-color: #3f3f46 !important;
+  }
+
+  /* =========================================================
+     6. GLASSY FROST THEME
+     ========================================================= */
+  [data-theme="glassy"] {
+    color-scheme: dark;
+  }
+
+  [data-theme="glassy"] .bg-slate-950 {
+    background: linear-gradient(135deg, #090d16 0%, #1e1b4b 50%, #030712 100%) !important;
+  }
+
+  [data-theme="glassy"] .bg-slate-900,
+  [data-theme="glassy"] .bg-slate-900\/90,
+  [data-theme="glassy"] .bg-slate-900\/80 {
+    background-color: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(16px) !important;
+    border-color: rgba(56, 189, 248, 0.3) !important;
+  }
+
+  [data-theme="glassy"] .bg-slate-800,
+  [data-theme="glassy"] .bg-slate-800\/80,
+  [data-theme="glassy"] .bg-slate-800\/50 {
+    background-color: rgba(30, 41, 59, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    border-color: rgba(125, 211, 252, 0.25) !important;
+  }
+
+  [data-theme="glassy"] .text-slate-100,
+  [data-theme="glassy"] .text-slate-200 {
+    color: #ffffff !important;
+  }
+
+  /* =========================================================
+     7. CRIMSON RED THEME
+     ========================================================= */
+  [data-theme="red"] {
+    color-scheme: dark;
+  }
+
+  [data-theme="red"] .bg-slate-950 {
+    background-color: #2b0606 !important;
+  }
+
+  [data-theme="red"] .bg-slate-900,
+  [data-theme="red"] .bg-slate-900\/90,
+  [data-theme="red"] .bg-slate-900\/80 {
+    background-color: #450a0a !important;
+  }
+
+  [data-theme="red"] .bg-slate-800,
+  [data-theme="red"] .bg-slate-800\/80,
+  [data-theme="red"] .bg-slate-800\/50 {
+    background-color: #7f1d1d !important;
+  }
+
+  [data-theme="red"] .border-slate-800,
+  [data-theme="red"] .border-slate-700 {
+    border-color: #991b1b !important;
+  }
+
+  [data-theme="red"] .text-slate-100,
+  [data-theme="red"] .text-slate-200,
+  [data-theme="red"] .text-slate-300 {
+    color: #ffffff !important;
+  }
+
+  [data-theme="red"] input,
+  [data-theme="red"] textarea,
+  [data-theme="red"] select {
+    color: #ffffff !important;
+    background-color: #2b0606 !important;
+    border-color: #f87171 !important;
+  }
+
+  /* =========================================================
+     FONT FAMILY SELECTORS
+     ========================================================= */
+  [data-font="inter"], [data-font="inter"] * { font-family: 'Inter', sans-serif !important; }
+  [data-font="jakarta"], [data-font="jakarta"] * { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+  [data-font="dmsans"], [data-font="dmsans"] * { font-family: 'DM Sans', sans-serif !important; }
+  [data-font="urbanist"], [data-font="urbanist"] * { font-family: 'Urbanist', sans-serif !important; }
+  [data-font="outfit"], [data-font="outfit"] * { font-family: 'Outfit', sans-serif !important; }
+  [data-font="space"], [data-font="space"] * { font-family: 'Space Grotesk', sans-serif !important; }
+  [data-font="lexend"], [data-font="lexend"] * { font-family: 'Lexend', sans-serif !important; }
+  [data-font="manrope"], [data-font="manrope"] * { font-family: 'Manrope', sans-serif !important; }
+  [data-font="raleway"], [data-font="raleway"] * { font-family: 'Raleway', sans-serif !important; }
+  [data-font="cinzel"], [data-font="cinzel"] * { font-family: 'Cinzel', serif !important; }
+  [data-font="fraunces"], [data-font="fraunces"] * { font-family: 'Fraunces', serif !important; }
+  [data-font="nunito"], [data-font="nunito"] * { font-family: 'Nunito', sans-serif !important; }
+  [data-font="quicksand"], [data-font="quicksand"] * { font-family: 'Quicksand', sans-serif !important; }
+  [data-font="jetbrains"], [data-font="jetbrains"] * { font-family: 'JetBrains Mono', monospace !important; }
+  [data-font="sourcecode"], [data-font="sourcecode"] * { font-family: 'Source Code Pro', monospace !important; }
+  [data-font="playfair"], [data-font="playfair"] * { font-family: 'Playfair Display', serif !important; }
+  [data-font="mono"], [data-font="mono"] * { font-family: 'Fira Code', monospace !important; }
+  [data-font="roboto"], [data-font="roboto"] * { font-family: 'Roboto', sans-serif !important; }
+  [data-font="poppins"], [data-font="poppins"] * { font-family: 'Poppins', sans-serif !important; }
+  [data-font="lora"], [data-font="lora"] * { font-family: 'Lora', serif !important; }
+  [data-font="merriweather"], [data-font="merriweather"] * { font-family: 'Merriweather', serif !important; }
+  [data-font="montserrat"], [data-font="montserrat"] * { font-family: 'Montserrat', sans-serif !important; }
+  [data-font="opensans"], [data-font="opensans"] * { font-family: 'Open Sans', sans-serif !important; }
+  [data-font="syne"], [data-font="syne"] * { font-family: 'Syne', sans-serif !important; }
+
+  /* =========================================================
+     8. EMERALD FOREST THEME
+     ========================================================= */
+  [data-theme="emerald"] { color-scheme: dark; }
+  [data-theme="emerald"] .bg-slate-950 { background-color: #022c22 !important; }
+  [data-theme="emerald"] .bg-slate-900, [data-theme="emerald"] .bg-slate-900\/90, [data-theme="emerald"] .bg-slate-900\/80 { background-color: #064e3b !important; }
+  [data-theme="emerald"] .bg-slate-800, [data-theme="emerald"] .bg-slate-800\/80, [data-theme="emerald"] .bg-slate-800\/50 { background-color: #047857 !important; }
+  [data-theme="emerald"] .border-slate-800, [data-theme="emerald"] .border-slate-700 { border-color: #059669 !important; }
+  [data-theme="emerald"] .text-slate-100, [data-theme="emerald"] .text-slate-200, [data-theme="emerald"] .text-slate-300 { color: #ffffff !important; }
+  [data-theme="emerald"] input, [data-theme="emerald"] textarea, [data-theme="emerald"] select { color: #ffffff !important; background-color: #022c22 !important; border-color: #10b981 !important; }
+
+  /* =========================================================
+     9. AMBER SUNSET THEME
+     ========================================================= */
+  [data-theme="amber"] { color-scheme: dark; }
+  [data-theme="amber"] .bg-slate-950 { background-color: #2e1000 !important; }
+  [data-theme="amber"] .bg-slate-900, [data-theme="amber"] .bg-slate-900\/90, [data-theme="amber"] .bg-slate-900\/80 { background-color: #451a03 !important; }
+  [data-theme="amber"] .bg-slate-800, [data-theme="amber"] .bg-slate-800\/80, [data-theme="amber"] .bg-slate-800\/50 { background-color: #78350f !important; }
+  [data-theme="amber"] .border-slate-800, [data-theme="amber"] .border-slate-700 { border-color: #b45309 !important; }
+  [data-theme="amber"] .text-slate-100, [data-theme="amber"] .text-slate-200, [data-theme="amber"] .text-slate-300 { color: #ffffff !important; }
+  [data-theme="amber"] input, [data-theme="amber"] textarea, [data-theme="amber"] select { color: #ffffff !important; background-color: #2e1000 !important; border-color: #f59e0b !important; }
+
+  /* =========================================================
+     10. NEON PURPLE THEME
+     ========================================================= */
+  [data-theme="purple"] { color-scheme: dark; }
+  [data-theme="purple"] .bg-slate-950 { background-color: #1e1b4b !important; }
+  [data-theme="purple"] .bg-slate-900, [data-theme="purple"] .bg-slate-900\/90, [data-theme="purple"] .bg-slate-900\/80 { background-color: #312e81 !important; }
+  [data-theme="purple"] .bg-slate-800, [data-theme="purple"] .bg-slate-800\/80, [data-theme="purple"] .bg-slate-800\/50 { background-color: #4338ca !important; }
+  [data-theme="purple"] .border-slate-800, [data-theme="purple"] .border-slate-700 { border-color: #6366f1 !important; }
+  [data-theme="purple"] .text-slate-100, [data-theme="purple"] .text-slate-200, [data-theme="purple"] .text-slate-300 { color: #ffffff !important; }
+  [data-theme="purple"] input, [data-theme="purple"] textarea, [data-theme="purple"] select { color: #ffffff !important; background-color: #1e1b4b !important; border-color: #818cf8 !important; }
+
+  /* =========================================================
+     11. CYBERPUNK THEME
+     ========================================================= */
+  [data-theme="cyberpunk"] { color-scheme: dark; }
+  [data-theme="cyberpunk"] .bg-slate-950 { background-color: #09090b !important; }
+  [data-theme="cyberpunk"] .bg-slate-900, [data-theme="cyberpunk"] .bg-slate-900\/90, [data-theme="cyberpunk"] .bg-slate-900\/80 { background-color: #18181b !important; }
+  [data-theme="cyberpunk"] .bg-slate-800, [data-theme="cyberpunk"] .bg-slate-800\/80, [data-theme="cyberpunk"] .bg-slate-800\/50 { background-color: #27272a !important; }
+  [data-theme="cyberpunk"] .border-slate-800, [data-theme="cyberpunk"] .border-slate-700 { border-color: #ec4899 !important; }
+  [data-theme="cyberpunk"] .text-slate-100, [data-theme="cyberpunk"] .text-slate-200, [data-theme="cyberpunk"] .text-slate-300 { color: #ffffff !important; }
+  [data-theme="cyberpunk"] input, [data-theme="cyberpunk"] textarea, [data-theme="cyberpunk"] select { color: #ffffff !important; background-color: #09090b !important; border-color: #06b6d4 !important; }
+
+  /* =========================================================
+     12. NORDIC FROST LIGHT THEME
+     ========================================================= */
+  [data-theme="nordic"] { color-scheme: light; }
+  [data-theme="nordic"] .bg-slate-950, [data-theme="nordic"] .bg-slate-900 { background-color: #f1f5f9 !important; }
+  [data-theme="nordic"] .bg-slate-900\/90, [data-theme="nordic"] .bg-slate-800 { background-color: #e2e8f0 !important; }
+  [data-theme="nordic"] .border-slate-800, [data-theme="nordic"] .border-slate-700 { border-color: #cbd5e1 !important; }
+  [data-theme="nordic"] .text-slate-100, [data-theme="nordic"] .text-slate-200, [data-theme="nordic"] .text-slate-300 { color: #000000 !important; }
+  [data-theme="nordic"] input, [data-theme="nordic"] textarea, [data-theme="nordic"] select { color: #000000 !important; background-color: #ffffff !important; border-color: #94a3b8 !important; }
+
+  /* =========================================================
+     13. SEPIA EYE-COMFORT THEME
+     ========================================================= */
+  [data-theme="sepia"] { color-scheme: light; }
+  [data-theme="sepia"] .bg-slate-950, [data-theme="sepia"] .bg-slate-900 { background-color: #fbf0d9 !important; }
+  [data-theme="sepia"] .bg-slate-900\/90, [data-theme="sepia"] .bg-slate-800 { background-color: #f3e5ab !important; }
+  [data-theme="sepia"] .border-slate-800, [data-theme="sepia"] .border-slate-700 { border-color: #d7ccc8 !important; }
+  [data-theme="sepia"] .text-slate-100, [data-theme="sepia"] .text-slate-200, [data-theme="sepia"] .text-slate-300 { color: #000000 !important; }
+  [data-theme="sepia"] input, [data-theme="sepia"] textarea, [data-theme="sepia"] select { color: #000000 !important; background-color: #fffde7 !important; border-color: #a1887f !important; }
+
+  /* =========================================================
+     14. GLASSY TRANSLUCENT THEME (Frosted Glass & Pure White Text)
+     ========================================================= */
+  [data-theme="glassy"] { color-scheme: dark; }
+  [data-theme="glassy"] .bg-slate-950 { background-color: rgba(10, 15, 30, 0.75) !important; backdrop-filter: blur(24px) saturate(180%) !important; }
+  [data-theme="glassy"] .bg-slate-900, [data-theme="glassy"] .bg-slate-900\/90, [data-theme="glassy"] .bg-slate-900\/80 { background-color: rgba(15, 23, 42, 0.65) !important; backdrop-filter: blur(20px) !important; }
+  [data-theme="glassy"] .bg-slate-800, [data-theme="glassy"] .bg-slate-800\/80, [data-theme="glassy"] .bg-slate-800\/50 { background-color: rgba(30, 41, 59, 0.55) !important; backdrop-filter: blur(16px) !important; }
+  [data-theme="glassy"] .border-slate-800, [data-theme="glassy"] .border-slate-700 { border-color: rgba(56, 189, 248, 0.35) !important; }
+  [data-theme="glassy"] .text-slate-100, [data-theme="glassy"] .text-slate-200, [data-theme="glassy"] .text-slate-300 { color: #ffffff !important; }
+  [data-theme="glassy"] input, [data-theme="glassy"] textarea, [data-theme="glassy"] select { color: #ffffff !important; background-color: rgba(15, 23, 42, 0.7) !important; border-color: rgba(56, 189, 248, 0.5) !important; }
+
+  /* =========================================================
+     15. OBSIDIAN SMOKED GLASS THEME
+     ========================================================= */
+  [data-theme="obsidian-glass"] { color-scheme: dark; }
+  [data-theme="obsidian-glass"] .bg-slate-950 { background-color: rgba(5, 5, 8, 0.82) !important; backdrop-filter: blur(28px) !important; }
+  [data-theme="obsidian-glass"] .bg-slate-900, [data-theme="obsidian-glass"] .bg-slate-900\/90, [data-theme="obsidian-glass"] .bg-slate-900\/80 { background-color: rgba(18, 18, 24, 0.75) !important; backdrop-filter: blur(20px) !important; }
+  [data-theme="obsidian-glass"] .bg-slate-800, [data-theme="obsidian-glass"] .bg-slate-800\/80, [data-theme="obsidian-glass"] .bg-slate-800\/50 { background-color: rgba(32, 32, 42, 0.65) !important; }
+  [data-theme="obsidian-glass"] .border-slate-800, [data-theme="obsidian-glass"] .border-slate-700 { border-color: rgba(255, 255, 255, 0.15) !important; }
+  [data-theme="obsidian-glass"] .text-slate-100, [data-theme="obsidian-glass"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="obsidian-glass"] input, [data-theme="obsidian-glass"] textarea, [data-theme="obsidian-glass"] select { color: #ffffff !important; background-color: rgba(10, 10, 15, 0.8) !important; border-color: rgba(255, 255, 255, 0.25) !important; }
+
+  /* =========================================================
+     16. AURORA TRANSLUCENT TEAL THEME
+     ========================================================= */
+  [data-theme="aurora-glass"] { color-scheme: dark; }
+  [data-theme="aurora-glass"] .bg-slate-950 { background-color: rgba(4, 25, 28, 0.8) !important; backdrop-filter: blur(24px) !important; }
+  [data-theme="aurora-glass"] .bg-slate-900, [data-theme="aurora-glass"] .bg-slate-900\/90, [data-theme="aurora-glass"] .bg-slate-900\/80 { background-color: rgba(6, 44, 48, 0.7) !important; }
+  [data-theme="aurora-glass"] .bg-slate-800, [data-theme="aurora-glass"] .bg-slate-800\/80 { background-color: rgba(13, 75, 80, 0.6) !important; }
+  [data-theme="aurora-glass"] .border-slate-800, [data-theme="aurora-glass"] .border-slate-700 { border-color: rgba(45, 212, 191, 0.4) !important; }
+  [data-theme="aurora-glass"] .text-slate-100, [data-theme="aurora-glass"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="aurora-glass"] input, [data-theme="aurora-glass"] textarea, [data-theme="aurora-glass"] select { color: #ffffff !important; background-color: rgba(4, 30, 34, 0.8) !important; border-color: #2dd4bf !important; }
+
+  /* =========================================================
+     17. AMETHYST VIOLET GLASS THEME
+     ========================================================= */
+  [data-theme="amethyst-glass"] { color-scheme: dark; }
+  [data-theme="amethyst-glass"] .bg-slate-950 { background-color: rgba(24, 10, 38, 0.8) !important; backdrop-filter: blur(24px) !important; }
+  [data-theme="amethyst-glass"] .bg-slate-900, [data-theme="amethyst-glass"] .bg-slate-900\/90, [data-theme="amethyst-glass"] .bg-slate-900\/80 { background-color: rgba(45, 18, 72, 0.7) !important; }
+  [data-theme="amethyst-glass"] .bg-slate-800, [data-theme="amethyst-glass"] .bg-slate-800\/80 { background-color: rgba(76, 29, 115, 0.6) !important; }
+  [data-theme="amethyst-glass"] .border-slate-800, [data-theme="amethyst-glass"] .border-slate-700 { border-color: rgba(192, 132, 252, 0.4) !important; }
+  [data-theme="amethyst-glass"] .text-slate-100, [data-theme="amethyst-glass"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="amethyst-glass"] input, [data-theme="amethyst-glass"] textarea, [data-theme="amethyst-glass"] select { color: #ffffff !important; background-color: rgba(30, 10, 50, 0.8) !important; border-color: #c084fc !important; }
+
+  /* =========================================================
+     18. SUNSET CORAL GLASS THEME
+     ========================================================= */
+  [data-theme="sunset-glass"] { color-scheme: dark; }
+  [data-theme="sunset-glass"] .bg-slate-950 { background-color: rgba(35, 14, 16, 0.8) !important; backdrop-filter: blur(24px) !important; }
+  [data-theme="sunset-glass"] .bg-slate-900, [data-theme="sunset-glass"] .bg-slate-900\/90, [data-theme="sunset-glass"] .bg-slate-900\/80 { background-color: rgba(65, 24, 28, 0.7) !important; }
+  [data-theme="sunset-glass"] .bg-slate-800, [data-theme="sunset-glass"] .bg-slate-800\/80 { background-color: rgba(105, 38, 42, 0.6) !important; }
+  [data-theme="sunset-glass"] .border-slate-800, [data-theme="sunset-glass"] .border-slate-700 { border-color: rgba(251, 146, 60, 0.4) !important; }
+  [data-theme="sunset-glass"] .text-slate-100, [data-theme="sunset-glass"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="sunset-glass"] input, [data-theme="sunset-glass"] textarea, [data-theme="sunset-glass"] select { color: #ffffff !important; background-color: rgba(40, 15, 18, 0.8) !important; border-color: #fb923c !important; }
+
+  /* =========================================================
+     19. TITANIUM SLATE THEME
+     ========================================================= */
+  [data-theme="titanium"] { color-scheme: dark; }
+  [data-theme="titanium"] .bg-slate-950 { background-color: #17191e !important; }
+  [data-theme="titanium"] .bg-slate-900, [data-theme="titanium"] .bg-slate-900\/90, [data-theme="titanium"] .bg-slate-900\/80 { background-color: #232730 !important; }
+  [data-theme="titanium"] .bg-slate-800, [data-theme="titanium"] .bg-slate-800\/80 { background-color: #323846 !important; }
+  [data-theme="titanium"] .border-slate-800, [data-theme="titanium"] .border-slate-700 { border-color: #4b5563 !important; }
+  [data-theme="titanium"] .text-slate-100, [data-theme="titanium"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="titanium"] input, [data-theme="titanium"] textarea, [data-theme="titanium"] select { color: #ffffff !important; background-color: #17191e !important; border-color: #9ca3af !important; }
+
+  /* =========================================================
+     20. CYBER TEAL MATRIX THEME
+     ========================================================= */
+  [data-theme="cyber-teal"] { color-scheme: dark; }
+  [data-theme="cyber-teal"] .bg-slate-950 { background-color: #041f28 !important; }
+  [data-theme="cyber-teal"] .bg-slate-900, [data-theme="cyber-teal"] .bg-slate-900\/90, [data-theme="cyber-teal"] .bg-slate-900\/80 { background-color: #083344 !important; }
+  [data-theme="cyber-teal"] .bg-slate-800, [data-theme="cyber-teal"] .bg-slate-800\/80 { background-color: #0e4e66 !important; }
+  [data-theme="cyber-teal"] .border-slate-800, [data-theme="cyber-teal"] .border-slate-700 { border-color: #06b6d4 !important; }
+  [data-theme="cyber-teal"] .text-slate-100, [data-theme="cyber-teal"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="cyber-teal"] input, [data-theme="cyber-teal"] textarea, [data-theme="cyber-teal"] select { color: #ffffff !important; background-color: #041f28 !important; border-color: #22d3ee !important; }
+
+  /* =========================================================
+     21. ROYAL SAPPHIRE GLASS THEME
+     ========================================================= */
+  [data-theme="royal-sapphire"] { color-scheme: dark; }
+  [data-theme="royal-sapphire"] .bg-slate-950 { background-color: rgba(10, 20, 50, 0.88) !important; backdrop-filter: blur(24px) !important; }
+  [data-theme="royal-sapphire"] .bg-slate-900, [data-theme="royal-sapphire"] .bg-slate-900\/90, [data-theme="royal-sapphire"] .bg-slate-900\/80 { background-color: rgba(20, 40, 95, 0.78) !important; }
+  [data-theme="royal-sapphire"] .bg-slate-800, [data-theme="royal-sapphire"] .bg-slate-800\/80 { background-color: rgba(30, 64, 150, 0.68) !important; }
+  [data-theme="royal-sapphire"] .border-slate-800, [data-theme="royal-sapphire"] .border-slate-700 { border-color: rgba(96, 165, 250, 0.55) !important; }
+  [data-theme="royal-sapphire"] .text-slate-100, [data-theme="royal-sapphire"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="royal-sapphire"] input, [data-theme="royal-sapphire"] textarea, [data-theme="royal-sapphire"] select { color: #ffffff !important; background-color: rgba(10, 25, 60, 0.88) !important; border-color: #3b82f6 !important; }
+
+  /* =========================================================
+     22. CHERRY BLOSSOM LIGHT THEME
+     ========================================================= */
+  [data-theme="cherry-blossom"] { color-scheme: light; }
+  [data-theme="cherry-blossom"] .bg-slate-950, [data-theme="cherry-blossom"] .bg-slate-900 { background-color: #fff1f2 !important; }
+  [data-theme="cherry-blossom"] .bg-slate-900\/90, [data-theme="cherry-blossom"] .bg-slate-800 { background-color: #ffe4e6 !important; }
+  [data-theme="cherry-blossom"] .border-slate-800, [data-theme="cherry-blossom"] .border-slate-700 { border-color: #fda4af !important; }
+  [data-theme="cherry-blossom"] .text-slate-100, [data-theme="cherry-blossom"] .text-slate-200, [data-theme="cherry-blossom"] .text-slate-300 { color: #000000 !important; }
+  [data-theme="cherry-blossom"] input, [data-theme="cherry-blossom"] textarea, [data-theme="cherry-blossom"] select { color: #000000 !important; background-color: #ffffff !important; border-color: #fb7185 !important; }
+
+  /* =========================================================
+     23. CLINICAL MONOCHROME THEME
+     ========================================================= */
+  [data-theme="slate-monochrome"] { color-scheme: dark; }
+  [data-theme="slate-monochrome"] .bg-slate-950 { background-color: #111827 !important; }
+  [data-theme="slate-monochrome"] .bg-slate-900, [data-theme="slate-monochrome"] .bg-slate-900\/90, [data-theme="slate-monochrome"] .bg-slate-900\/80 { background-color: #1f2937 !important; }
+  [data-theme="slate-monochrome"] .bg-slate-800, [data-theme="slate-monochrome"] .bg-slate-800\/80 { background-color: #374151 !important; }
+  [data-theme="slate-monochrome"] .border-slate-800, [data-theme="slate-monochrome"] .border-slate-700 { border-color: #6b7280 !important; }
+  [data-theme="slate-monochrome"] .text-slate-100, [data-theme="slate-monochrome"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="slate-monochrome"] input, [data-theme="slate-monochrome"] textarea, [data-theme="slate-monochrome"] select { color: #ffffff !important; background-color: #111827 !important; border-color: #e5e7eb !important; }
+
+  /* =========================================================
+     24. MATCHA SERENITY THEME
+     ========================================================= */
+  [data-theme="matcha-latte"] { color-scheme: light; }
+  [data-theme="matcha-latte"] .bg-slate-950, [data-theme="matcha-latte"] .bg-slate-900 { background-color: #f7fee7 !important; }
+  [data-theme="matcha-latte"] .bg-slate-900\/90, [data-theme="matcha-latte"] .bg-slate-800 { background-color: #ecfccb !important; }
+  [data-theme="matcha-latte"] .border-slate-800, [data-theme="matcha-latte"] .border-slate-700 { border-color: #bef264 !important; }
+  [data-theme="matcha-latte"] .text-slate-100, [data-theme="matcha-latte"] .text-slate-200, [data-theme="matcha-latte"] .text-slate-300 { color: #000000 !important; }
+  [data-theme="matcha-latte"] input, [data-theme="matcha-latte"] textarea, [data-theme="matcha-latte"] select { color: #000000 !important; background-color: #ffffff !important; border-color: #84cc16 !important; }
+
+  /* =========================================================
+     25. SOLAR FLARE GOLD THEME
+     ========================================================= */
+  [data-theme="solar-flare"] { color-scheme: dark; }
+  [data-theme="solar-flare"] .bg-slate-950 { background-color: #1c1917 !important; }
+  [data-theme="solar-flare"] .bg-slate-900, [data-theme="solar-flare"] .bg-slate-900\/90, [data-theme="solar-flare"] .bg-slate-900\/80 { background-color: #292524 !important; }
+  [data-theme="solar-flare"] .bg-slate-800, [data-theme="solar-flare"] .bg-slate-800\/80 { background-color: #44403c !important; }
+  [data-theme="solar-flare"] .border-slate-800, [data-theme="solar-flare"] .border-slate-700 { border-color: #f59e0b !important; }
+  [data-theme="solar-flare"] .text-slate-100, [data-theme="solar-flare"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="solar-flare"] input, [data-theme="solar-flare"] textarea, [data-theme="solar-flare"] select { color: #ffffff !important; background-color: #1c1917 !important; border-color: #fbbf24 !important; }
+
+  /* =========================================================
+     26. TERMINAL GREEN THEME
+     ========================================================= */
+  [data-theme="neon-matrix"] { color-scheme: dark; }
+  [data-theme="neon-matrix"] .bg-slate-950 { background-color: #000000 !important; }
+  [data-theme="neon-matrix"] .bg-slate-900, [data-theme="neon-matrix"] .bg-slate-900\/90, [data-theme="neon-matrix"] .bg-slate-900\/80 { background-color: #051405 !important; }
+  [data-theme="neon-matrix"] .bg-slate-800, [data-theme="neon-matrix"] .bg-slate-800\/80 { background-color: #0a290a !important; }
+  [data-theme="neon-matrix"] .border-slate-800, [data-theme="neon-matrix"] .border-slate-700 { border-color: #22c55e !important; }
+  [data-theme="neon-matrix"] .text-slate-100, [data-theme="neon-matrix"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="neon-matrix"] input, [data-theme="neon-matrix"] textarea, [data-theme="neon-matrix"] select { color: #ffffff !important; background-color: #000000 !important; border-color: #22c55e !important; }
+
+  /* =========================================================
+     27. LAVENDER MIST THEME
+     ========================================================= */
+  [data-theme="lavender-mist"] { color-scheme: light; }
+  [data-theme="lavender-mist"] .bg-slate-950, [data-theme="lavender-mist"] .bg-slate-900 { background-color: #faf5ff !important; }
+  [data-theme="lavender-mist"] .bg-slate-900\/90, [data-theme="lavender-mist"] .bg-slate-800 { background-color: #f3e8ff !important; }
+  [data-theme="lavender-mist"] .border-slate-800, [data-theme="lavender-mist"] .border-slate-700 { border-color: #d8b4fe !important; }
+  [data-theme="lavender-mist"] .text-slate-100, [data-theme="lavender-mist"] .text-slate-200, [data-theme="lavender-mist"] .text-slate-300 { color: #000000 !important; }
+  [data-theme="lavender-mist"] input, [data-theme="lavender-mist"] textarea, [data-theme="lavender-mist"] select { color: #000000 !important; background-color: #ffffff !important; border-color: #a855f7 !important; }
+
+  /* =========================================================
+     28. CRIMSON VELVET THEME
+     ========================================================= */
+  [data-theme="crimson-luxury"] { color-scheme: dark; }
+  [data-theme="crimson-luxury"] .bg-slate-950 { background-color: #200407 !important; }
+  [data-theme="crimson-luxury"] .bg-slate-900, [data-theme="crimson-luxury"] .bg-slate-900\/90, [data-theme="crimson-luxury"] .bg-slate-900\/80 { background-color: #3b0811 !important; }
+  [data-theme="crimson-luxury"] .bg-slate-800, [data-theme="crimson-luxury"] .bg-slate-800\/80 { background-color: #580c1a !important; }
+  [data-theme="crimson-luxury"] .border-slate-800, [data-theme="crimson-luxury"] .border-slate-700 { border-color: #f43f5e !important; }
+  [data-theme="crimson-luxury"] .text-slate-100, [data-theme="crimson-luxury"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="crimson-luxury"] input, [data-theme="crimson-luxury"] textarea, [data-theme="crimson-luxury"] select { color: #ffffff !important; background-color: #200407 !important; border-color: #fb7185 !important; }
+
+  /* =========================================================
+     29. ARCTIC GLACIER THEME
+     ========================================================= */
+  [data-theme="arctic-ice"] { color-scheme: dark; }
+  [data-theme="arctic-ice"] .bg-slate-950 { background-color: #031525 !important; }
+  [data-theme="arctic-ice"] .bg-slate-900, [data-theme="arctic-ice"] .bg-slate-900\/90, [data-theme="arctic-ice"] .bg-slate-900\/80 { background-color: #072540 !important; }
+  [data-theme="arctic-ice"] .bg-slate-800, [data-theme="arctic-ice"] .bg-slate-800\/80 { background-color: #0d3860 !important; }
+  [data-theme="arctic-ice"] .border-slate-800, [data-theme="arctic-ice"] .border-slate-700 { border-color: #38bdf8 !important; }
+  [data-theme="arctic-ice"] .text-slate-100, [data-theme="arctic-ice"] .text-slate-200 { color: #ffffff !important; }
+  [data-theme="arctic-ice"] input, [data-theme="arctic-ice"] textarea, [data-theme="arctic-ice"] select { color: #ffffff !important; background-color: #031525 !important; border-color: #7dd3fc !important; }
+
+  /* =========================================================
+     MESSAGE BUBBLES CUSTOM STYLING (Glassy Light Blue, Dark Black Text)
+     ========================================================= */
+  .chat-msg-bubble {
+    background-color: rgba(186, 230, 253, 0.9) !important; /* glassy light blue */
+    backdrop-filter: blur(12px) !important;
+    color: #000000 !important;
+    font-weight: 500 !important;
+  }
+
+  .chat-msg-bubble p,
+  .chat-msg-bubble span:not(.badge-override) {
+    color: #000000 !important;
+  }
+
+  /* Sent message bubble highlight */
+  .chat-msg-bubble-sent {
+    background: linear-gradient(135deg, rgba(186, 230, 253, 0.95), rgba(125, 211, 252, 0.92)) !important;
+    border: 1.5px solid rgba(14, 116, 144, 0.6) !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 12px rgba(14, 116, 144, 0.15) !important;
+    transition: all 0.3s ease;
+  }
+
+  /* Sent & Read/Seen Message Bubble with illuminated cyan seen status */
+  .chat-msg-bubble-sent.chat-msg-bubble-seen {
+    background: linear-gradient(135deg, rgba(207, 250, 254, 0.98), rgba(165, 243, 252, 0.95)) !important;
+    border: 1.5px solid #06b6d4 !important;
+    box-shadow: 0 4px 18px -2px rgba(6, 182, 212, 0.38), 0 0 0 1px rgba(6, 182, 212, 0.3) !important;
+  }
+
+  /* Received message in White & Light modes: Clean Light Background, High-Black text, NO dark borders/frames */
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) .chat-msg-bubble-received {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #000000 !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) .chat-msg-bubble-sent {
+    background: #e0f2fe !important;
+    border: 1px solid #7dd3fc !important;
+    color: #000000 !important;
+    box-shadow: 0 1px 4px rgba(14, 116, 144, 0.08) !important;
+  }
+
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) .chat-msg-bubble-sent.chat-msg-bubble-seen {
+    background: #cffafe !important;
+    border: 1.5px solid #38bdf8 !important;
+    color: #000000 !important;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.2) !important;
+  }
+
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) :is(.border-slate-800, .border-slate-700, .border-slate-900, .border-white\/10, .border-white\/20) {
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Received message in Dark modes */
+  .chat-msg-bubble-received {
+    border: 1.5px solid #0284c7 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  /* =========================================================
+     COMPREHENSIVE THEME TEXT COLOR MANDATE:
+     "in dark themes all text are in the white and in white themes all text is in black"
+     ========================================================= */
+
+  /* 1. ALL LIGHT / WHITE THEMES: Pure Black (#000000) Text */
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) {
+    color: #000000 !important;
+  }
+
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) :is(
+    h1, h2, h3, h4, h5, h6,
+    p,
+    label,
+    li,
+    td, th,
+    dt, dd,
+    blockquote,
+    small,
+    strong,
+    b,
+    input,
+    textarea,
+    select,
+    span:not(.badge-override):not(.text-white-override):not(.lucide),
+    a:not(.text-white-override),
+    button:not(.bg-indigo-600):not(.bg-indigo-500):not(.bg-sky-600):not(.bg-sky-500):not(.bg-teal-600):not(.bg-teal-500):not(.bg-emerald-600):not(.bg-emerald-500):not(.bg-red-600):not(.bg-red-500):not(.bg-rose-600):not(.bg-rose-500):not(.bg-amber-600):not(.bg-slate-900):not(.bg-slate-950):not(.text-white-override),
+    .text-slate-50,
+    .text-slate-100,
+    .text-slate-200,
+    .text-slate-300,
+    .text-slate-400,
+    .text-slate-500,
+    .text-slate-600,
+    .text-slate-700,
+    .text-slate-800,
+    .text-slate-900,
+    .text-gray-50,
+    .text-gray-100,
+    .text-gray-200,
+    .text-gray-300,
+    .text-gray-400,
+    .text-gray-500,
+    .text-gray-600,
+    .text-zinc-100,
+    .text-zinc-200,
+    .text-zinc-300,
+    .text-zinc-400,
+    .text-neutral-100,
+    .text-neutral-200,
+    .text-neutral-300,
+    .text-neutral-400,
+    .text-white
+  ):not(.badge-override):not(.text-white-override) {
+    color: #000000 !important;
+  }
+
+  /* Preserve white text on dark/saturated action buttons & overrides in light themes */
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) :is(
+    .bg-indigo-600,
+    .bg-indigo-500,
+    .bg-sky-600,
+    .bg-sky-500,
+    .bg-teal-600,
+    .bg-teal-500,
+    .bg-emerald-600,
+    .bg-emerald-500,
+    .bg-red-600,
+    .bg-red-500,
+    .bg-rose-600,
+    .bg-rose-500,
+    .bg-amber-600,
+    .bg-slate-900,
+    .bg-slate-950,
+    .text-white-override,
+    .text-white-override *
+  ) {
+    color: #ffffff !important;
+  }
+
+  /* 2. ALL DARK THEMES: Pure White (#ffffff) Text */
+  :is(
+    [data-theme="black"],
+    [data-theme="dark-blue"],
+    [data-theme="glassy"],
+    [data-theme="red"],
+    [data-theme="emerald"],
+    [data-theme="amber"],
+    [data-theme="purple"],
+    [data-theme="cyberpunk"],
+    [data-theme="obsidian-glass"],
+    [data-theme="aurora-glass"],
+    [data-theme="amethyst-glass"],
+    [data-theme="sunset-glass"],
+    [data-theme="titanium"],
+    [data-theme="cyber-teal"],
+    [data-theme="royal-glass"],
+    [data-theme="royal-sapphire"],
+    [data-theme="slate-monochrome"],
+    [data-theme="solar-flare"],
+    [data-theme="neon-matrix"],
+    [data-theme="crimson-luxury"],
+    [data-theme="arctic-ice"]
+  ) {
+    color: #ffffff !important;
+  }
+
+  :is(
+    [data-theme="black"],
+    [data-theme="dark-blue"],
+    [data-theme="glassy"],
+    [data-theme="red"],
+    [data-theme="emerald"],
+    [data-theme="amber"],
+    [data-theme="purple"],
+    [data-theme="cyberpunk"],
+    [data-theme="obsidian-glass"],
+    [data-theme="aurora-glass"],
+    [data-theme="amethyst-glass"],
+    [data-theme="sunset-glass"],
+    [data-theme="titanium"],
+    [data-theme="cyber-teal"],
+    [data-theme="royal-glass"],
+    [data-theme="royal-sapphire"],
+    [data-theme="slate-monochrome"],
+    [data-theme="solar-flare"],
+    [data-theme="neon-matrix"],
+    [data-theme="crimson-luxury"],
+    [data-theme="arctic-ice"]
+  ) :is(
+    h1, h2, h3, h4, h5, h6,
+    p,
+    label,
+    li,
+    td, th,
+    dt, dd,
+    blockquote,
+    small,
+    strong,
+    b,
+    input,
+    textarea,
+    select,
+    span:not(.badge-override):not(.lucide),
+    a:not(.badge-override),
+    button:not(.badge-override),
+    .text-slate-50,
+    .text-slate-100,
+    .text-slate-200,
+    .text-slate-300,
+    .text-slate-400,
+    .text-slate-500,
+    .text-slate-600,
+    .text-slate-700,
+    .text-gray-50,
+    .text-gray-100,
+    .text-gray-200,
+    .text-gray-300,
+    .text-gray-400,
+    .text-zinc-100,
+    .text-zinc-200,
+    .text-zinc-300,
+    .text-neutral-100,
+    .text-neutral-200,
+    .text-neutral-300,
+    .text-white
+  ):not(.badge-override):not(.chat-msg-bubble):not(.chat-msg-bubble *) {
+    color: #ffffff !important;
+  }
+
+  /* Keep accent-colored utility text readable when a light theme changes the surface to white. */
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) :is(
+    [class*="text-sky-"],
+    [class*="text-blue-"],
+    [class*="text-cyan-"],
+    [class*="text-teal-"],
+    [class*="text-emerald-"],
+    [class*="text-green-"],
+    [class*="text-lime-"],
+    [class*="text-yellow-"],
+    [class*="text-amber-"],
+    [class*="text-orange-"],
+    [class*="text-red-"],
+    [class*="text-rose-"],
+    [class*="text-pink-"],
+    [class*="text-fuchsia-"],
+    [class*="text-purple-"],
+    [class*="text-violet-"],
+    [class*="text-indigo-"]
+  ):not(.badge-override):not(.text-white-override) {
+    color: #111827 !important;
+  }
+
+  /* Utility text inside colored actions inherits the action's accessible white foreground. */
+  :is(
+    [data-theme="white"],
+    [data-theme="hospital-light"],
+    [data-theme="light-blue"],
+    [data-theme="pink"],
+    [data-theme="nordic"],
+    [data-theme="sepia"],
+    [data-theme="cherry-blossom"],
+    [data-theme="matcha-latte"],
+    [data-theme="lavender-mist"]
+  ) :is(
+    .bg-indigo-600,
+    .bg-indigo-500,
+    .bg-sky-600,
+    .bg-sky-500,
+    .bg-teal-600,
+    .bg-teal-500,
+    .bg-emerald-600,
+    .bg-emerald-500,
+    .bg-red-600,
+    .bg-red-500,
+    .bg-rose-600,
+    .bg-rose-500,
+    .bg-amber-600,
+    .bg-slate-900,
+    .bg-slate-950,
+    .bg-gradient-to-r,
+    .bg-gradient-to-br,
+    .text-white-override
+  ) :is(*, [class*="text-"]):not(.badge-override):not(.text-white-override) {
+    color: #ffffff !important;
+  }
+}

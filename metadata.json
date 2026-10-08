@@ -1,0 +1,6 @@
+{
+  "name": "Elyano Connect",
+  "description": "Real-time hospital communication platform with WebRTC audio/video calling, Active Directory LDAP, SQL Server sync, 24/7 IT Bot technical triage and automated IT group dispatch.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

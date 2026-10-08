@@ -1,0 +1,17 @@
+﻿node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+key.pem
+cert.pem
+data/
+release/
+shared_files/
+temp_directory_uploads/
+uploads/
+user_images/
+elyano-connect.zip
